@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chove?</title>
+    <script>
+        window.onload = inicio;
+        let quadro;
+        let ultimo;
+
+        function inicio() {
+            quadro = document.getElementById('quadro');
+            quadro.addEventListener('mousemove', moveu);
+            ultimo = Date.now();
+        }
+
+        function moveu(e) {
+            //console.log(e);
+            let agora = Date.now();
+            if (agora - ultimo > 1000) {
+                let texto = `<text x="${e.clientX - 10}" y="${e.clientY - 10}" class="small">${e.clientX},${e.clientY}</text>`;
+                quadro.innerHTML += texto;
+                console.log(agora - ultimo);
+                ultimo = agora;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg" id="quadro">
+        <rect x="0" y="0" width="300" height="200" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" />
+    </svg>
+</body>
+
+</html>
