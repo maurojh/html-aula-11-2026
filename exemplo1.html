@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chove?</title>
+    <script>
+        window.onload = inicio;
+        let ckb_chove;
+
+        function inicio() {
+            ckb_chove = document.getElementById('chove');
+            ckb_chove.addEventListener('click', verifica);
+        }
+
+        function verifica() {
+            let imagem = document.getElementById('figura');
+            imagem.src = 'futebol.png';
+            console.log(ckb_chove.checked);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Está chovendo?</h1>
+    <input type="checkbox" id="chove"><label for="">Sim</label>
+    <p>
+        <img src="" alt="" id="figura" width="300px">
+    </p>
+</body>
+
+</html>

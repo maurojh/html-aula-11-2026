@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chove?</title>
+    <script>
+        window.onload = inicio;
+
+        function inicio() {
+            let botao = document.getElementById('botao');
+            botao.addEventListener('click', calcular);
+        }
+
+        function calcular() {
+            let tipo = document.getElementsByName('tipo');
+            let valor = Number(document.getElementById('valor').value);
+            let meses = Number(document.getElementById('tempo').value);
+
+            console.log(tipo[0].checked);
+            console.log(tipo[1].checked);
+            console.log(valor);
+            console.log(meses);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Tipo de juros:</h1>
+    <input type="radio" value="poupanca" name="tipo">
+    <label for="">Poupança</label><br>
+    <input type="radio" value="cartao" name="tipo">
+    <label for="">Cartão de crédito</label><br>
+    <label for="">Valor:</label>
+    <input type="text" id="valor"><br>
+    <label for="">Meses:</label>
+    <input type="text" id="tempo"><br>
+    <input type="button" value="Calcular" id="botao">
+    <p id="resultado">
+    </p>
+</body>
+
+</html>
